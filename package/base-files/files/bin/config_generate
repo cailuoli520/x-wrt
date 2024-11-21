@@ -162,8 +162,8 @@ generate_network() {
 		static)
 			local ipad
 			case "$1" in
-				lan) ipad=${ipaddr:-"192.168.15.1"} ;;
-				*) ipad=${ipaddr:-"192.168.$((addr_offset++)).1"} ;;
+				lan) ipad=${ipaddr:-"10.0.2.1"} ;;
+				*) ipad=${ipaddr:-"10.0.$((addr_offset++)).1"} ;;
 			esac
 
 			netm=${netmask:-"255.255.255.0"}
@@ -194,8 +194,8 @@ generate_network() {
 		pppoe)
 			uci -q batch <<-EOF
 				set network.$1.proto='pppoe'
-				set network.$1.username='username'
-				set network.$1.password='password'
+				set network.$1.username='079402478130'
+				set network.$1.password='632538'
 			EOF
 			[ -e /proc/sys/net/ipv6 ] && {
 				uci -q batch <<-EOF
